@@ -1,0 +1,17 @@
+{
+  "$comment": "Sample data for the simulator and the best-supplier calculator. All people and company names are fictional. Same numbers as tests/vectors.json.",
+  "context": {
+    "customerDate": "2026-11-20",
+    "productionDays": 5,
+    "bufferDays": 1,
+    "costPerDayDelay": 6000,
+    "costOfCapital": 0.14,
+    "gstRate": 0.18,
+    "itcClaimable": true
+  },
+  "suppliers": [
+    { "id": "A", "name": "Sri Sai Steel Traders", "place": "Peenya", "lang": "English", "qty": 2, "rate": 63500, "freight": 3000, "loading": 1000, "creditDays": 0, "promised": "2026-11-14", "onTime": 0.6, "slipDays": 4 },
+    { "id": "B", "name": "Murugan Metals", "place": "Hosur", "lang": "Tamil", "qty": 2, "rate": 65000, "freight": 3500, "loading": 1000, "creditDays": 0, "promised": "2026-11-12", "onTime": 0.9, "slipDays": 2 },
+    { "id": "C", "name": "Basava Iron Mart", "place": "Yeshwanthpur", "lang": "Kannada", "qty": 2, "rate": 62400, "freight": 4000, "loading": 1000, "creditDays": 0, "promised": "2026-11-17", "onTime": 1.0, "slipDays": 0 }
+  ]
+}

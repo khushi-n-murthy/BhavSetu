@@ -1,0 +1,69 @@
+{
+  "$comment": "Single source of truth for engine tests. Read by Python (pytest) and TypeScript (Vitest). Money in rupees; tolerance 0.01.",
+  "supplier": {
+    "context": {
+      "customerDate": "2026-11-20",
+      "productionDays": 5,
+      "bufferDays": 1,
+      "costPerDayDelay": 6000,
+      "costOfCapital": 0.14,
+      "gstRate": 0.18,
+      "itcClaimable": true
+    },
+    "expectedNeedBy": "2026-11-14",
+    "cases": [
+      {
+        "id": "A",
+        "quote": { "qty": 2, "rate": 63500, "freight": 3000, "loading": 1000, "creditDays": 0, "promised": "2026-11-14", "onTime": 0.6, "slipDays": 4 },
+        "expected": { "landed": 131000, "delayDays": 1.6, "delayCost": 9600, "effective": 140600, "missesDeadline": false }
+      },
+      {
+        "id": "B",
+        "quote": { "qty": 2, "rate": 65000, "freight": 3500, "loading": 1000, "creditDays": 0, "promised": "2026-11-12", "onTime": 0.9, "slipDays": 2 },
+        "expected": { "landed": 134500, "delayDays": 0, "delayCost": 0, "effective": 134500, "missesDeadline": false }
+      },
+      {
+        "id": "C",
+        "quote": { "qty": 2, "rate": 62400, "freight": 4000, "loading": 1000, "creditDays": 0, "promised": "2026-11-17", "onTime": 1.0, "slipDays": 0 },
+        "expected": { "landed": 129800, "delayDays": 3, "delayCost": 18000, "effective": 147800, "missesDeadline": true }
+      },
+      {
+        "id": "A30",
+        "quote": { "qty": 2, "rate": 63500, "freight": 3000, "loading": 1000, "creditDays": 30, "promised": "2026-11-14", "onTime": 0.6, "slipDays": 4 },
+        "expected": { "landed": 129538.63, "delayDays": 1.6, "delayCost": 9600, "effective": 139138.63, "missesDeadline": false }
+      },
+      {
+        "id": "A_noITC",
+        "quote": { "qty": 2, "rate": 63500, "freight": 3000, "loading": 1000, "creditDays": 0, "promised": "2026-11-14", "onTime": 0.6, "slipDays": 4 },
+        "itcClaimable": false,
+        "expected": { "landed": 153860, "delayDays": 1.6, "delayCost": 9600, "effective": 163460, "missesDeadline": false }
+      }
+    ],
+    "rankings": [
+      { "ids": ["A", "B", "C"], "recommended": "B", "order": ["B", "A", "C"] },
+      { "ids": ["A30", "B", "C"], "recommended": "B", "order": ["B", "A30", "C"] }
+    ]
+  },
+  "negotiation": {
+    "qty": 2, "fromRate": 65000, "toRate": 64500, "ceiling": 65000,
+    "expected": { "saved": 1000, "withinCeiling": true }
+  },
+  "lossGuard": {
+    "input": {
+      "quantity": 500, "netKgPerPiece": 1.2, "scrapPct": 0.08, "materialRate": 70,
+      "machineHours": 20, "machineRate": 900, "labourHours": 40, "labourRate": 150,
+      "outsidePerPiece": 12, "overheadPct": 0.12, "packingDelivery": 2000,
+      "paymentDays": 60, "costOfCapital": 0.14, "minMargin": 0.08, "quotedPerPiece": 170
+    },
+    "expected": {
+      "materialKg": 648, "material": 45360, "machine": 18000, "labour": 6000, "outside": 6000,
+      "overhead": 9043.2, "packing": 2000, "finance": 1988.46,
+      "totalCost": 88391.66, "costPerPiece": 176.78, "quoteTotal": 85000,
+      "profit": -3391.66, "minSafePerPiece": 190.93, "verdict": "loss"
+    }
+  },
+  "savings": {
+    "input": { "turnover": 50000000, "materialShare": 0.6, "savingPct": 0.03, "lossesAvoided": 2, "avgLoss": 40000 },
+    "expected": { "materialSpend": 30000000, "materialSaving": 900000, "lossSaving": 80000, "total": 980000 }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$comment": "Fill the empty strings before launch, then run `npm run prelaunch`. Empty links are hidden on the page.",
+  "product": "BhavSetu",
+  "productDevanagari": "भाव सेतु",
+  "title": "BhavSetu: AI agents that help small factories buy right and quote right",
+  "oneLiner": "A voice-first team of AI agents on WhatsApp that picks the best supplier for each order and never lets a small factory quote below cost.",
+  "siteUrl": "https://bhavsetu.vercel.app",
+  "teamName": "",
+  "college": "",
+  "email": "",
+  "links": {
+    "github": "",
+    "deck": "/deck.pdf",
+    "demoVideo": ""
+  },
+  "hackathon": {
+    "name": "Tech4Bharat 2026",
+    "url": "https://thegavshackathon.com/",
+    "problem": "4.1",
+    "problemTitle": "Small factories overpay for raw material and quote orders at a loss",
+    "track": "Agentic AI",
+    "theme": "04 · Manufacturing & Industry"
+  }
+}

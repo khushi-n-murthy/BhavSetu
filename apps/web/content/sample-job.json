@@ -1,0 +1,10 @@
+{
+  "$comment": "Loss Guard worked example. Same numbers as tests/vectors.json.",
+  "title": "500 powder-coated MS brackets for a buyer's enquiry",
+  "input": {
+    "quantity": 500, "netKgPerPiece": 1.2, "scrapPct": 0.08, "materialRate": 70,
+    "machineHours": 20, "machineRate": 900, "labourHours": 40, "labourRate": 150,
+    "outsidePerPiece": 12, "overheadPct": 0.12, "packingDelivery": 2000,
+    "paymentDays": 60, "costOfCapital": 0.14, "minMargin": 0.08, "quotedPerPiece": 170
+  }
+}

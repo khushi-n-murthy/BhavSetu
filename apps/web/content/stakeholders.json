@@ -1,0 +1,10 @@
+[
+  { "who": "Factory owner", "pain": "5–10 calls per purchase, paper comparisons, rule-of-thumb quotes", "feature": "Voice-note RFQs, a quote inbox that reads anything, deadline-aware ranking, Loss Guard on every quote", "gain": "Lower material cost, no loss-making orders, hours back each week" },
+  { "who": "Suppliers and traders", "pain": "Vague enquiries, haggling, slow decisions, late payment", "feature": "Clear RFQs in their own language with spec, quantity and date; reply any way they like", "gain": "Bigger, cleaner orders and faster decisions; reliable suppliers win even when not the cheapest" },
+  { "who": "Buyers and purchase teams", "pain": "Slow, inconsistent quotes from small vendors", "feature": "Quotes with a cost breakdown, validity date and material-index clause", "gain": "Faster, trustworthy quotes with delivery dates the unit can meet" },
+  { "who": "Transporters", "pain": "Part loads, empty return trips, rate haggling", "feature": "Freight counted in landed cost; shared truckloads for cluster orders", "gain": "Fuller trucks and steady local demand" },
+  { "who": "Industrial associations", "pain": "Members lose to large buyers on price; little data for advocacy", "feature": "Group buying and an anonymised cluster price index", "gain": "A new member service and hard data for policy talks" },
+  { "who": "Lenders", "pain": "Thin files on micro units", "feature": "A consented trail of POs, receipts and invoices for cash-flow lending", "gain": "Small borrowers they can underwrite" },
+  { "who": "Government schemes", "pain": "Low uptake of help that already exists", "feature": "GeM bid matching, NSIC raw-material form prefill, 45-day payment reminders", "gain": "Schemes that reach the units that need them" },
+  { "who": "Local youth", "pain": "Few skilled jobs near home", "feature": "The Cluster Saathi role: onboard units, run assisted sessions, verify suppliers", "gain": "Paid local work at a JanAI Café or association office" }
+]

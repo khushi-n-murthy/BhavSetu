@@ -1,0 +1,16 @@
+{
+  "$comment": "Fill in names (same spelling as the idea form, deck and README). Photos are optional: put them in public/team/ and set photo to /team/<file>.webp.",
+  "members": [
+    { "role": "A", "title": "Agent lead", "owns": "Munim orchestrator, Kharid and Lagat agents, recovery logic", "name": "", "photo": "" },
+    { "role": "B", "title": "Engines and data", "owns": "Landed cost, delay risk, Loss Guard, evaluation", "name": "", "photo": "" },
+    { "role": "C", "title": "Channel and experience", "owns": "WhatsApp, speech in and out, this website, demo reliability", "name": "", "photo": "" },
+    { "role": "D", "title": "Field and business", "owns": "Interviews, pilots, partnerships, business model, deck", "name": "", "photo": "" }
+  ],
+  "credits": [],
+  "responsibleAI": [
+    "The agent negotiates and recommends; only the owner awards, commits or pays.",
+    "Field notes carry only what interviewees agreed to share. No unit is named without written consent, and photos are blurred.",
+    "Data is collected per purpose with consent and can be deleted by the unit at any time."
+  ],
+  "disclosure": "WhatsApp, supplier and buyer conversations on this page are simulated with sample data. GeM, ONDC, TReDS and payment integrations are planned and will be sandboxed and labelled."
+}

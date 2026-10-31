@@ -1,0 +1,137 @@
+{
+  "$comment": "Scripted purchase on sample data. {placeholders} are filled from the engines at run time: needBy, customerDate, finalRate, finalDate, landedFinal, saved, ceiling, recommendedName. Owner-facing text has en/kn/hi; Kannada and Hindi need a native-speaker check.",
+  "order": { "customer": "Ravi Engineering", "item": "2 mm MS sheet", "qty": 2, "unit": "t" },
+  "negotiation": { "supplierId": "B", "counterRate": 64500, "ceiling": 65000, "maxRounds": 3 },
+  "po": { "number": "BS-1042" },
+  "beats": [
+    {
+      "step": 1,
+      "msg": {
+        "from": "owner", "kind": "voice", "duration": "0:06",
+        "text": {
+          "en": "Need two tons of 2 mm MS sheet for the Ravi Engineering order.",
+          "kn": "ರವಿ ಇಂಜಿನಿಯರಿಂಗ್ ಆರ್ಡರ್‌ಗೆ ಎರಡು ಟನ್ 2 mm MS ಶೀಟ್ ಬೇಕು.",
+          "hi": "रवि इंजीनियरिंग ऑर्डर के लिए दो टन 2 mm MS शीट चाहिए।"
+        },
+        "sub": { "kn": "Need 2 t of 2 mm MS sheet for the Ravi Engineering order", "hi": "Need 2 t of 2 mm MS sheet for the Ravi Engineering order" }
+      },
+      "trace": [
+        { "agent": "Munim", "action": "transcribe voice note", "detail": { "en": "English · confidence 0.96", "kn": "Kannada · confidence 0.94", "hi": "Hindi · confidence 0.95" } }
+      ]
+    },
+    {
+      "step": 2,
+      "msg": {
+        "from": "bhavsetu", "to": "owner", "kind": "text",
+        "text": {
+          "en": "Got it: 2 t of 2 mm MS sheet for the Ravi Engineering order, needed here by {needBy}. Asking your 3 suppliers now.",
+          "kn": "ಸರಿ: ರವಿ ಇಂಜಿನಿಯರಿಂಗ್ ಆರ್ಡರ್‌ಗೆ 2 ಟನ್ 2 mm MS ಶೀಟ್, {needBy}ರೊಳಗೆ ಬೇಕು. ನಿಮ್ಮ 3 ಪೂರೈಕೆದಾರರನ್ನು ಈಗ ಕೇಳುತ್ತಿದ್ದೇನೆ.",
+          "hi": "ठीक है: रवि इंजीनियरिंग ऑर्डर के लिए 2 टन 2 mm MS शीट, {needBy} तक चाहिए। आपके 3 सप्लायरों से अभी पूछ रहा हूँ।"
+        }
+      },
+      "trace": [
+        { "agent": "Munim", "action": "recall order from case memory", "detail": "due {customerDate}, 5 production days + 1 buffer day → need by {needBy}" },
+        { "agent": "Munim", "action": "plan", "detail": "6 steps: RFQ → collect → compare → negotiate → recommend → PO" }
+      ]
+    },
+    {
+      "step": 3,
+      "msg": { "from": "bhavsetu", "to": "A", "kind": "text", "lang": "English",
+        "text": "Hello from BhavSetu, the purchase assistant for our unit in Peenya. Need 2 t of 2 mm MS sheet delivered by {needBy}. Please send rate per ton, GST, freight, loading and delivery date. Reply STOP to opt out." },
+      "trace": [ { "agent": "Kharid", "action": "send RFQ → Sri Sai Steel Traders", "detail": "English · AI disclosure and opt-out in first message" } ]
+    },
+    {
+      "step": 3,
+      "msg": { "from": "bhavsetu", "to": "B", "kind": "text", "lang": "Tamil",
+        "text": "வணக்கம். 2 டன் 2 mm MS ஷீட் தேவை, {needBy}க்குள் பீண்யாவில் டெலிவரி. டன் விலை, GST, லாரி செலவு, டெலிவரி தேதி சொல்லுங்கள்.",
+        "sub": "Need 2 t of 2 mm MS sheet delivered to Peenya by {needBy}. Please share rate per ton, GST, freight and delivery date." },
+      "trace": [ { "agent": "Kharid", "action": "send RFQ → Murugan Metals", "detail": "Tamil" } ]
+    },
+    {
+      "step": 3,
+      "msg": { "from": "bhavsetu", "to": "C", "kind": "text", "lang": "Kannada",
+        "text": "ನಮಸ್ಕಾರ. 2 ಟನ್ 2 mm MS ಶೀಟ್ ಬೇಕು, {needBy}ರೊಳಗೆ ಪೀಣ್ಯಕ್ಕೆ. ಟನ್ ದರ, GST, ಸಾಗಣೆ ವೆಚ್ಚ ಮತ್ತು ತಲುಪುವ ದಿನಾಂಕ ತಿಳಿಸಿ.",
+        "sub": "Need 2 t of 2 mm MS sheet at Peenya by {needBy}. Please share rate per ton, GST, transport cost and arrival date." },
+      "trace": [ { "agent": "Kharid", "action": "send RFQ → Basava Iron Mart", "detail": "Kannada" } ]
+    },
+    {
+      "step": 4,
+      "msg": { "from": "A", "kind": "text", "lang": "English",
+        "text": "2mm MS sheet ₹63,500/T + GST 18%. Freight 3000, loading 1000. Delivery 14 Nov." },
+      "trace": [ { "agent": "Kharid", "action": "parse reply · Sri Sai", "detail": "rate, GST extra, freight, loading, date · confidence 0.97" } ]
+    },
+    {
+      "step": 4,
+      "msg": { "from": "B", "kind": "voice", "lang": "Tamil", "duration": "0:09",
+        "text": "இரண்டு டன் ஷீட், டன்னுக்கு 65,000 ரூபாய், GST தனி. லாரி 3,500, ஏற்றுக்கூலி 1,000. 12ஆம் தேதி வந்துவிடும்.",
+        "sub": "Two tons of sheet, ₹65,000 a ton, GST extra. Truck 3,500, loading 1,000. It will arrive on the 12th." },
+      "trace": [
+        { "agent": "Munim", "action": "transcribe voice note · Murugan", "detail": "Tamil · confidence 0.91" },
+        { "agent": "Kharid", "action": "parse reply · Murugan", "detail": "all fields found" }
+      ]
+    },
+    {
+      "step": 4,
+      "msg": { "from": "C", "kind": "slip",
+        "slip": ["MS Sheet 2mm", "62400/- per T", "Ex-works", "Frt 4000 · Ldg 1000", "Del 17/11"] },
+      "trace": [ { "agent": "Vision", "action": "read handwritten rate slip", "detail": "confidence 0.82, below 0.9 → confirm before using", "warn": true } ]
+    },
+    {
+      "step": 5,
+      "msg": { "from": "bhavsetu", "to": "C", "kind": "text", "lang": "Kannada",
+        "text": "₹62,400 ಪ್ರತಿ ಟನ್, ex-works, GST ಹೆಚ್ಚುವರಿ, ಸರಿಯೇ?",
+        "sub": "₹62,400 per ton, ex-works, GST extra, correct?" },
+      "trace": [ { "agent": "Kharid", "action": "confirm unclear field", "detail": "recovery: asks instead of guessing", "recover": true } ]
+    },
+    {
+      "step": 5,
+      "msg": { "from": "C", "kind": "text", "lang": "Kannada", "text": "ಹೌದು", "sub": "Yes" },
+      "trace": [ { "agent": "Kharid", "action": "quote confirmed · Basava", "detail": "₹62,400/t ex-works, GST extra" } ]
+    },
+    {
+      "step": 6,
+      "msg": { "from": "bhavsetu", "to": "owner", "kind": "table" },
+      "trace": [
+        { "agent": "Engines", "action": "landed cost", "detail": "rate × qty + freight + loading; GST credit claimable" },
+        { "agent": "Engines", "action": "delay risk", "detail": "need by {needBy} · {costPerDay} per day of delay" },
+        { "agent": "Engines", "action": "rank on effective cost", "detail": "{recommendedName} recommended; cheapest misses deadline" }
+      ]
+    },
+    {
+      "step": 7,
+      "msg": { "from": "bhavsetu", "to": "B", "kind": "text", "lang": "Tamil",
+        "text": "டன்னுக்கு {finalRate}க்கு தர முடியுமா? இன்றே உறுதி செய்கிறோம்.",
+        "sub": "Can you do {finalRate} a ton? We will confirm today." },
+      "trace": [ { "agent": "Kharid", "action": "counter-offer", "detail": "{finalRate} inside ceiling {ceiling} · round 1 of 3" } ]
+    },
+    {
+      "step": 7,
+      "msg": { "from": "B", "kind": "text", "lang": "Tamil",
+        "text": "சரி, {finalRate}. 12ஆம் தேதி டெலிவரி.",
+        "sub": "OK, {finalRate}. Delivery on the 12th." },
+      "trace": [ { "agent": "Kharid", "action": "counter accepted", "detail": "saved {saved} on this order" } ]
+    },
+    {
+      "step": 8,
+      "msg": {
+        "from": "bhavsetu", "to": "owner", "kind": "approval", "duration": "0:14",
+        "text": {
+          "en": "Best option: Murugan Metals, {finalRate} a ton, arrives {finalDate}. Landed cost {landedFinal}. The cheaper quotes risk missing your {needBy} date. Approve?",
+          "kn": "ಉತ್ತಮ ಆಯ್ಕೆ: ಮುರುಗನ್ ಮೆಟಲ್ಸ್, ಟನ್‌ಗೆ {finalRate}, {finalDate}ಕ್ಕೆ ತಲುಪುತ್ತದೆ. ಒಟ್ಟು ವೆಚ್ಚ {landedFinal}. ಕಡಿಮೆ ದರದವರು ನಿಮ್ಮ {needBy}ರ ಗಡುವು ತಪ್ಪಿಸುವ ಅಪಾಯವಿದೆ. ಅನುಮೋದಿಸುವಿರಾ?",
+          "hi": "सबसे अच्छा विकल्प: मुरुगन मेटल्स, {finalRate} प्रति टन, {finalDate} तक पहुँचेगा। कुल लागत {landedFinal}। सस्ते रेट वाले आपकी {needBy} की डेडलाइन चूक सकते हैं। मंज़ूर करें?"
+        },
+        "sub": { "kn": "Best option: Murugan Metals, {finalRate} a ton, arrives {finalDate}. Landed cost {landedFinal}. Approve?", "hi": "Best option: Murugan Metals, {finalRate} a ton, arrives {finalDate}. Landed cost {landedFinal}. Approve?" }
+      },
+      "trace": [ { "agent": "Munim", "action": "request approval", "detail": "voice summary in the owner's language · waiting for a tap", "gate": true } ]
+    }
+  ],
+  "afterApprove": [
+    { "agent": "Munim", "action": "owner approved", "detail": "logged with timestamp in the audit trail", "gate": true },
+    { "agent": "Kharid", "action": "issue PO {poNumber}", "detail": "to Murugan Metals · dispatch watch set for {finalDate}" }
+  ],
+  "labels": {
+    "approve": { "en": "Approve", "kn": "ಅನುಮೋದಿಸಿ", "hi": "मंज़ूर" },
+    "change": { "en": "Change", "kn": "ಬದಲಿಸಿ", "hi": "बदलें" },
+    "reject": { "en": "Reject", "kn": "ತಿರಸ್ಕರಿಸಿ", "hi": "रद्द करें" }
+  }
+}

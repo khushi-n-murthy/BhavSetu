@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 640" font-family="Inter, Segoe UI, Roboto, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">BhavSetu architecture</title>
+  <desc id="d">Six layers: WhatsApp channel, understanding (speech, vision, PDF), Munim orchestrator, five specialist agents, deterministic engines, and sandboxed integrations.</desc>
+  <rect width="880" height="640" fill="#ffffff"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#55657c"/></marker>
+  </defs>
+
+  <!-- 1 Channel -->
+  <rect x="40" y="24" width="800" height="72" rx="12" fill="#f3f6f9" stroke="#dbe2ea"/>
+  <text x="64" y="54" font-size="20" font-weight="700" fill="#10213f">Channel: WhatsApp</text>
+  <text x="64" y="80" font-size="15" fill="#2b3b58">Owner, suppliers, buyers · voice notes, photos, PDFs, buttons · assisted path via a Cluster Saathi</text>
+  <line x1="440" y1="96" x2="440" y2="118" stroke="#55657c" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- 2 Understanding -->
+  <rect x="40" y="122" width="800" height="72" rx="12" fill="#f3f6f9" stroke="#dbe2ea"/>
+  <text x="64" y="152" font-size="20" font-weight="700" fill="#10213f">Understanding</text>
+  <text x="64" y="178" font-size="15" fill="#2b3b58">Speech-to-text (Sarvam, Bhashini fallback) · vision for handwritten rate slips · PDF parser</text>
+  <line x1="440" y1="194" x2="440" y2="216" stroke="#55657c" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- 3 Munim -->
+  <rect x="40" y="220" width="800" height="80" rx="12" fill="#10213f"/>
+  <text x="64" y="254" font-size="21" font-weight="700" fill="#ffffff">Orchestrator: Munim</text>
+  <text x="64" y="282" font-size="15" fill="#d6dde8">Case memory with checkpoints · the owner's policy card · approval queue · audit log</text>
+  <text x="816" y="254" font-size="14" text-anchor="end" fill="#9fe3d3">Owner approves every rupee</text>
+  <line x1="440" y1="300" x2="440" y2="322" stroke="#55657c" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- 4 Agents -->
+  <g font-size="15">
+    <rect x="40" y="326" width="148" height="78" rx="12" fill="#e3f3ef" stroke="#0e7c6b"/>
+    <text x="114" y="358" text-anchor="middle" font-size="18" font-weight="700" fill="#0a5f52">Kharid</text>
+    <text x="114" y="382" text-anchor="middle" fill="#2b3b58">buy</text>
+    <rect x="203" y="326" width="148" height="78" rx="12" fill="#f3f6f9" stroke="#dbe2ea"/>
+    <text x="277" y="358" text-anchor="middle" font-size="18" font-weight="700" fill="#10213f">Bhav</text>
+    <text x="277" y="382" text-anchor="middle" fill="#2b3b58">price</text>
+    <rect x="366" y="326" width="148" height="78" rx="12" fill="#e3f3ef" stroke="#0e7c6b"/>
+    <text x="440" y="358" text-anchor="middle" font-size="18" font-weight="700" fill="#0a5f52">Lagat</text>
+    <text x="440" y="382" text-anchor="middle" fill="#2b3b58">cost and quote</text>
+    <rect x="529" y="326" width="148" height="78" rx="12" fill="#f3f6f9" stroke="#dbe2ea"/>
+    <text x="603" y="358" text-anchor="middle" font-size="18" font-weight="700" fill="#10213f">Bazaar</text>
+    <text x="603" y="382" text-anchor="middle" fill="#2b3b58">demand</text>
+    <rect x="692" y="326" width="148" height="78" rx="12" fill="#f3f6f9" stroke="#dbe2ea"/>
+    <text x="766" y="358" text-anchor="middle" font-size="18" font-weight="700" fill="#10213f">Sangha</text>
+    <text x="766" y="382" text-anchor="middle" fill="#2b3b58">cluster</text>
+  </g>
+  <line x1="440" y1="404" x2="440" y2="426" stroke="#55657c" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- 5 Engines -->
+  <rect x="40" y="430" width="800" height="80" rx="12" fill="#e3f3ef" stroke="#0e7c6b" stroke-width="2"/>
+  <text x="64" y="462" font-size="20" font-weight="700" fill="#0a5f52">Deterministic engines: every rupee computed here</text>
+  <text x="64" y="490" font-size="15" fill="#2b3b58">Landed cost · delay risk · should-cost · Loss Guard · negotiation policy · tested in Python and TypeScript</text>
+  <line x1="440" y1="510" x2="440" y2="532" stroke="#55657c" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- 6 Integrations -->
+  <rect x="40" y="536" width="800" height="72" rx="12" fill="#ffffff" stroke="#55657c" stroke-dasharray="7 6" stroke-width="1.5"/>
+  <text x="64" y="566" font-size="20" font-weight="700" fill="#10213f">Integrations (sandboxed, labelled)</text>
+  <text x="64" y="592" font-size="15" fill="#2b3b58">GeM · ONDC · TReDS · UPI payment links · Tally export · e-way bill</text>
+</svg>

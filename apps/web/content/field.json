@@ -1,0 +1,35 @@
+{
+  "$comment": "Add interviews and insights as they are consented. No unit names without written consent; blur faces, name boards and number plates in photos.",
+  "status": "Field visits run 2–6 November in Peenya and Bommasandra. Notes appear here as interviewees agree to share them.",
+  "clusters": [
+    { "name": "Peenya", "detail": "~13,000 MSMEs and 5 lakh+ workers; fabrication, plastics, garments, machining", "sourceId": "peenya" },
+    { "name": "Bommasandra", "detail": "Engineering and component units on Hosur Road, many supplying auto and electronics buyers" }
+  ],
+  "targets": [
+    { "who": "Owners: fabrication", "count": 8 },
+    { "who": "Owners: plastics moulding", "count": 5 },
+    { "who": "Owners: garment units", "count": 4 },
+    { "who": "Owners: components / machining", "count": 3 },
+    { "who": "Suppliers and traders", "count": 5 },
+    { "who": "Buyers' purchase staff", "count": 3 },
+    { "who": "Transporters", "count": 2 },
+    { "who": "Associations (PIA, KASSIA)", "count": 2 }
+  ],
+  "questions": [
+    { "q": "How many suppliers does the owner call for a typical purchase, and how long does it take?", "shapes": "Sets the time-saved metric and how many suppliers get each RFQ" },
+    { "q": "How are quotes compared, and which costs get missed?", "shapes": "Defines the landed-cost fields: freight, loading, credit, GST treatment, cutting charges" },
+    { "q": "How was the last quote to a buyer worked out?", "shapes": "Calibrates the should-cost engine and Loss Guard" },
+    { "q": "How often has an order turned out to be a loss?", "shapes": "Sizes what Loss Guard is worth" },
+    { "q": "Where do new buyer enquiries come from today?", "shapes": "Decides which sources Bazaar watches first" },
+    { "q": "Would neighbouring units buy together?", "shapes": "Decides whether Sangha group buying is near-term or roadmap" }
+  ],
+  "probes": [
+    "How often did material arrive late in the last six months, and by how many days?",
+    "What did the last delay cost you: buyer penalty, idle workers, overtime, a lost customer?",
+    "What would make you trust a machine to negotiate for you?",
+    "What would you pay a month if it saved you ₹1 lakh a year?"
+  ],
+  "interviews": [],
+  "insights": [],
+  "changes": []
+}

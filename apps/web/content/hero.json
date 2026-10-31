@@ -1,0 +1,25 @@
+{
+  "$comment": "Kannada and Hindi are drafts. Have a native speaker check them before launch and add their name to team.json credits.",
+  "eyebrow": "Tech4Bharat 2026 · Problem 4.1 · Agentic AI",
+  "headline": {
+    "en": "Small factories that buy right and quote right.",
+    "kn": "ಸರಿಯಾಗಿ ಖರೀದಿಸುವ, ಸರಿಯಾಗಿ ಬೆಲೆ ಹೇಳುವ ಸಣ್ಣ ಕಾರ್ಖಾನೆಗಳು.",
+    "hi": "सही ख़रीदें, सही दाम बताएँ: छोटे कारख़ानों के लिए।"
+  },
+  "subhead": {
+    "en": "BhavSetu is a team of AI agents on WhatsApp that collects supplier quotes, picks the best option for each order, and blocks any quote below cost. The owner approves every rupee.",
+    "kn": "ಭಾವಸೇತು ವಾಟ್ಸ್‌ಆ್ಯಪ್‌ನಲ್ಲಿರುವ AI ಏಜೆಂಟ್‌ಗಳ ತಂಡ. ಇದು ಪೂರೈಕೆದಾರರ ದರಗಳನ್ನು ಸಂಗ್ರಹಿಸಿ, ಪ್ರತಿ ಆರ್ಡರ್‌ಗೆ ಉತ್ತಮ ಆಯ್ಕೆಯನ್ನು ಸೂಚಿಸುತ್ತದೆ ಮತ್ತು ವೆಚ್ಚಕ್ಕಿಂತ ಕಡಿಮೆ ಬೆಲೆಯ ಕೊಟೇಶನ್ ಅನ್ನು ತಡೆಯುತ್ತದೆ. ಪ್ರತಿ ರೂಪಾಯಿಗೂ ಮಾಲೀಕರ ಅನುಮೋದನೆ ಬೇಕು.",
+    "hi": "भावसेतु WhatsApp पर AI एजेंटों की एक टीम है जो सप्लायरों से रेट मँगाती है, हर ऑर्डर के लिए सबसे अच्छा विकल्प चुनती है, और लागत से कम का कोई भी कोटेशन रोक देती है। हर रुपये पर मालिक की मंज़ूरी ज़रूरी है।"
+  },
+  "buttons": {
+    "try": { "en": "Try a purchase", "kn": "ಖರೀದಿ ಪ್ರಯತ್ನಿಸಿ", "hi": "ख़रीद आज़माएँ" },
+    "github": { "en": "GitHub", "kn": "GitHub", "hi": "GitHub" },
+    "deck": { "en": "Idea deck (PDF)", "kn": "ಐಡಿಯಾ ಡೆಕ್ (PDF)", "hi": "आइडिया डेक (PDF)" },
+    "video": { "en": "Watch the 2-min demo", "kn": "2 ನಿಮಿಷದ ಡೆಮೊ ನೋಡಿ", "hi": "2 मिनट का डेमो देखें" }
+  },
+  "trustLine": {
+    "en": "Built for Peenya and Bommasandra units · Voice-first in Kannada, Hindi and English · No app to install",
+    "kn": "ಪೀಣ್ಯ ಮತ್ತು ಬೊಮ್ಮಸಂದ್ರ ಘಟಕಗಳಿಗಾಗಿ · ಕನ್ನಡ, ಹಿಂದಿ, ಇಂಗ್ಲಿಷ್‌ನಲ್ಲಿ ಧ್ವನಿ ಮೊದಲು · ಯಾವುದೇ ಆ್ಯಪ್ ಬೇಕಿಲ್ಲ",
+    "hi": "पीण्या और बोम्मसंद्रा की यूनिटों के लिए · कन्नड़, हिंदी और अंग्रेज़ी में आवाज़ से · कोई ऐप इंस्टॉल नहीं"
+  }
+}

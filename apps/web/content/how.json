@@ -1,0 +1,53 @@
+{
+  "intro": "The language model reads and writes messages in Kannada, Hindi, Tamil, Telugu and English. Every rupee is computed by plain, unit-tested code with a visible formula, so a price can never be hallucinated.",
+  "layers": [
+    { "name": "Channel", "items": ["WhatsApp: owner, suppliers, buyers", "Voice notes, photos, PDFs, buttons", "Assisted path via a Cluster Saathi"] },
+    { "name": "Understanding", "items": ["Speech-to-text (Sarvam, Bhashini fallback)", "Vision model for handwritten rate slips", "PDF parser for typed quotes and drawings"] },
+    { "name": "Orchestrator: Munim", "items": ["Case memory with checkpoints", "The owner's policy card", "Approval queue and audit log"] },
+    { "name": "Specialist agents", "items": ["Kharid · buy", "Bhav · price", "Lagat · cost and quote", "Bazaar · demand", "Sangha · cluster"] },
+    { "name": "Deterministic engines", "items": ["Landed cost", "Delay risk", "Should-cost", "Loss Guard", "Negotiation policy"] },
+    { "name": "Integrations (sandboxed, labelled)", "items": ["GeM, ONDC", "TReDS, UPI payment links", "Tally export, e-way bill"] }
+  ],
+  "agents": [
+    { "name": "Kharid", "meaning": "buy", "job": "Sends RFQs, reads replies, computes landed cost and delay risk against the customer's deadline, negotiates price and dates inside limits, raises the PO after approval, tracks delivery." },
+    { "name": "Bhav", "meaning": "price", "job": "Tracks benchmarks and the cluster median, flags overpriced quotes, says buy now or wait." },
+    { "name": "Lagat", "meaning": "cost", "job": "Reads a buyer's drawing, photo or voice spec, checks it against the shop's machines, builds a should-cost, drafts a protected quote, runs Loss Guard." },
+    { "name": "Bazaar", "meaning": "market", "job": "Finds and matches new buyer enquiries from GeM, ONDC and lead lists; drafts responses." },
+    { "name": "Sangha", "meaning": "group", "job": "Pools demand from neighbouring units for group buys and shared truckloads." }
+  ],
+  "properties": [
+    { "brief": "Pursues a goal over many steps", "how": "Munim turns “2 ton MS sheet by Friday” into a plan: RFQ → collect → compare → negotiate → recommend → PO → track.", "demo": "Step 2 of the simulator" },
+    { "brief": "Plans and acts in external systems", "how": "Sends WhatsApp messages, reads replies, queries price benchmarks, checks GeM bids, generates PO documents.", "demo": "Step 3: RFQs in three languages" },
+    { "brief": "Keeps memory of the case", "how": "Checkpointed state per case: suppliers, quotes, rounds, the owner's limits and history with each supplier.", "demo": "Step 2: order recalled from memory" },
+    { "brief": "Recovers when something fails", "how": "Confirms unclear fields, reminds silent suppliers, widens the RFQ, falls back to a second model.", "demo": "Step 5: unclear rate slip confirmed" },
+    { "brief": "Seeks approval before money moves", "how": "Hard gates on award, PO, quote to a buyer, payment and sharing data with a lender.", "demo": "Step 8: Approve / Change / Reject" }
+  ],
+  "guardrails": [
+    { "action": "Send RFQs", "may": "Message suppliers on the owner's list", "mayNot": "Contact anyone outside the approved list without asking", "control": "Approve new suppliers with one tap" },
+    { "action": "Negotiate", "may": "Counter up to 3 rounds inside the floor and ceiling", "mayNot": "Exceed the ceiling, invent a competing offer or reveal a rival's price", "control": "Sets ceiling, rounds and credit terms on the policy card" },
+    { "action": "Award and PO", "may": "Prepare a ranked recommendation and a draft PO", "mayNot": "Award, sign or send a PO", "control": "Approve / Change / Reject buttons" },
+    { "action": "Quote to a buyer", "may": "Draft the quote with a cost breakdown", "mayNot": "Send it, or send anything below the Loss Guard floor", "control": "Approves; overrides Loss Guard only with a logged reason" },
+    { "action": "Payment", "may": "Prepare a payment link and remind on due dates", "mayNot": "Move money", "control": "Pays through their own bank or UPI" },
+    { "action": "Share data", "may": "Build an anonymised cluster index from 5+ units", "mayNot": "Share any unit's identity, prices or buyers without consent", "control": "Consent per purpose, revocable" }
+  ],
+  "safeguards": [
+    "Every supplier's first message says it is BhavSetu, an assistant acting for the named unit, with an opt-out.",
+    "Uncertain prices, units or GST treatment are confirmed with the supplier, never guessed.",
+    "The owner can say “ruko” or “stop” at any time to freeze every open case.",
+    "Every message, calculation, approval and override is logged with a timestamp.",
+    "Only the data each task needs is collected, with consent, in line with the DPDP Act, 2023."
+  ],
+  "realVsSimulated": {
+    "real": [
+      "Landed-cost, delay-risk, Loss Guard and savings engines in Python and TypeScript",
+      "26 tests on one shared set of test vectors, run on every push",
+      "Every number in the calculators and simulator on this page, computed live by those engines"
+    ],
+    "simulated": [
+      "WhatsApp, supplier and owner conversations (scripted, sample data)",
+      "Speech and vision confidence scores shown in the trace",
+      "GeM, ONDC, TReDS and payment integrations (planned, will be sandboxed and labelled)"
+    ],
+    "next": "By 6 Dec (prototype round): the simulator and calculators call the real Python engines through an API, and a recorded demo shows a real WhatsApp purchase."
+  }
+}

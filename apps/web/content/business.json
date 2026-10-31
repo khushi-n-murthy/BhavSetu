@@ -1,0 +1,30 @@
+{
+  "$comment": "Illustrative until pilot data replaces it. Market and jobs figures are computed from these inputs.",
+  "savingsDefaults": { "turnover": 50000000, "materialShare": 0.6, "savingPct": 0.03, "lossesAvoided": 2, "avgLoss": 40000 },
+  "pricing": [
+    { "plan": "Saathi", "price": "₹499 / month", "detail": "Assisted, 5 RFQs a month, run with a Cluster Saathi" },
+    { "plan": "Pro", "price": "₹1,499–2,499 / month", "detail": "Unlimited RFQs, Lagat costing and quoting, Bazaar buyer matching" },
+    { "plan": "For sceptics", "price": "10% of verified savings", "detail": "Capped; pay only when BhavSetu saves money" }
+  ],
+  "otherRevenue": [
+    { "stream": "Pooled-order fee", "payer": "Supplier winning a group buy", "price": "0.5% of order value, disclosed to buyers" },
+    { "stream": "Purchase-finance referral", "payer": "Bank or NBFC", "price": "0.5–1% of disbursal" },
+    { "stream": "Association licence", "payer": "Association", "price": "Per-member annual fee" },
+    { "stream": "Cluster price index", "payer": "Banks, researchers, government", "price": "Annual data licence, aggregated only" }
+  ],
+  "costPerCycle": {
+    "messages": 20, "perMessage": 0.115, "messageSourceId": "wa-rates",
+    "voiceMinutes": 3, "perMinute": 0.49, "voiceSourceId": "sarvam",
+    "llmAndParsing": 2.5,
+    "cyclesPerMonth": 30
+  },
+  "economics": {
+    "avgRevenuePerMonth": 1500,
+    "peenyaUnits": 13000, "peenyaSourceId": "peenya",
+    "peenyaAdoption": 0.10,
+    "indiaMfgUnits": 18300000, "indiaSourceId": "udyam",
+    "indiaAdoption": 0.01,
+    "unitsPerSaathi": 50,
+    "saathiMonthlyIncome": 15000
+  }
+}
