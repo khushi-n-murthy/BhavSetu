@@ -1,10 +1,9 @@
 {
   "$comment": "Fill in names (same spelling as the idea form, deck and README). Photos are optional: put them in public/team/ and set photo to /team/<file>.webp.",
   "members": [
-    { "role": "A", "title": "Agent lead", "owns": "Munim orchestrator, Kharid and Lagat agents, recovery logic", "name": "", "photo": "" },
-    { "role": "B", "title": "Engines and data", "owns": "Landed cost, delay risk, Loss Guard, evaluation", "name": "", "photo": "" },
-    { "role": "C", "title": "Channel and experience", "owns": "WhatsApp, speech in and out, this website, demo reliability", "name": "", "photo": "" },
-    { "role": "D", "title": "Field and business", "owns": "Interviews, pilots, partnerships, business model, deck", "name": "", "photo": "" }
+    { "role": "Khushi N", "title": "Agent lead", "owns": "Munim orchestrator, Kharid and Lagat agents, recovery logic", "name": "", "photo": "" },
+    { "role": "Palak Jangid A", "title": "Engines and data", "owns": "Landed cost, delay risk, Loss Guard, evaluation", "name": "", "photo": "" },
+    { "role": "Nanditha L", "title": "Channel and experience", "owns": "WhatsApp, speech in and out, this website, demo reliability", "name": "", "photo": "" }
   ],
   "credits": [],
   "responsibleAI": [
